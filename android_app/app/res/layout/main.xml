@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:device="spec:width=1280dp,height=720dp,orientation=landscape"
+    tools:ignore="MergeRootFrame">
+
+    <!-- 1. 底层视频渲染窗口（全屏铺满） -->
+    <SurfaceView
+        android:id="@+id/surface_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 2. 横向贯穿的半透明顶部 HUD 状态栏（物理隔离左右两侧，绝对不重叠） -->
+    <LinearLayout
+        android:id="@+id/top_hud_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#90000000"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <!-- A. 靠左对齐：链路状态信息（绿字 OSD 风格） -->
+        <TextView
+            android:id="@+id/osd_top_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LQ:99% | 25.4Mbps | FPS:60"
+            android:textColor="#00FF00"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="1.5"
+            android:shadowDy="1.5"
+            android:shadowRadius="1.5" />
+
+        <!-- B. 弹性占位符（弹簧）：强行撑开中间空白，防重叠 -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- C. 靠右对齐：摄像头切换文字 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本地相机:"
+            android:textColor="#00FF00"
+            android:textSize="13sp"
+            android:layout_marginRight="6dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"/>
+
+        <!-- 摄像头源切换开关（绿字、半透明黑底的 ToggleButton） -->
+        <ToggleButton
+            android:id="@+id/switch_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginRight="16dp"
+            android:background="#A0000000"
+            android:textOn="手机相机"
+            android:textOff="板端相机"
+            android:textColor="#00FF00"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:checked="false" />
+
+        <!-- D. 👉 【关键修改】：去掉了 background 属性的系统自带白框，仅保留干净的文字 -->
+        <Spinner
+            android:id="@+id/spinner_task"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:entries="@array/task_array"
+            android:spinnerMode="dropdown"
+            android:background="@null"
+            android:theme="@android:style/Theme.Holo"
+            android:popupBackground="#F0000000" />
+    </LinearLayout>
+
+    <!-- 3. 左下角 OSD 信息（如电池、电压，绿字HUD） -->
+    <TextView
+        android:id="@+id/osd_bottom_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="ACRO\nARMED\n16.8 Volt"
+        android:textColor="#00FF00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:lineSpacingMultiplier="1.2"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2" />
+
+    <!-- 4. 右下角 OSD 信息（如速度、高度，右对齐） -->
+    <TextView
+        android:id="@+id/osd_bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:text="75 km/h\n0 m"
+        android:gravity="right"
+        android:textColor="#00FF00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:lineSpacingMultiplier="1.2"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2" />
+
+</RelativeLayout>

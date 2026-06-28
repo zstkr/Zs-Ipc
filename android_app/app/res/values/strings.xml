@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">zsfpv</string>
+    <string name="button_play">Play</string>
+    <string name="button_stop">Stop</string>
+
+    <!-- 【新增】：下拉菜单的选项 -->
+    <string-array name="task_array">
+        <item>目标检测 (Detection)</item>
+        <item>实例分割 (Segmentation)</item>
+        <item>姿态估计 (Pose)</item>
+        <item>不使用模型 (纯视频流)</item>
+    </string-array>
+</resources>

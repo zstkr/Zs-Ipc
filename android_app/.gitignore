@@ -1,0 +1,32 @@
+# === 1. Android & Gradle 编译产物 ===
+.gradle/
+build/
+**/build/
+
+# === 2. Android NDK C/C++ 编译缓存 (非常重要，体积很大) ===
+.cxx/
+**/objs/
+**/.cxx/
+
+# === 3. 个人本地环境配置 (绝对不能上传) ===
+# local.properties 里面记录了您电脑上的 SDK/NDK 绝对路径，必须忽略
+local.properties
+
+# === 4. IDE (Android Studio / IntelliJ / VS Code) 临时文件 ===
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# === 5. 摄像头端 C/C++ 编译临时文件 ===
+# 如果您在 app 目录下执行了 cmake 编译，会产生这些临时目录
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# === 6. 系统临时文件 ===
+.DS_Store
+Thumbs.db
