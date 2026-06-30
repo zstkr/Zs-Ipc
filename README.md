@@ -21,8 +21,20 @@
 本项目提供了一个“免复杂环境配置、开箱即用、软硬件闭环”的完整开源模板，非常适合定制化硬件开发者、物联网极客和多媒体图传/嵌入式 AI 开发者参考。
 
 ---
+git status                          # 1. 查看哪些文件被修改了
+git add .                           # 2. 将修改的文件放入暂存区（也可以用 git add <文件名> 指定文件）
+git commit -m "fix: 修复了自启脚本中xx问题" # 3. 提交并附带规范的提交说明
+git push                            # 4. 推送到远程 GitHub（后续无需再加 -u origin main）
+### 📐 系统架构与工作流程
+
+<p align="center">
+  <img src="docs/images/flowchart.png" width="85%" /><br/>
+  <b>zs-ipc 系统整体架构与数据流向图</b>
+</p>
 
 ### 📷 运行效果与硬件展示
+
+---
 
 #### 1. 算法多任务切换效果 (Android 播放端)
 
@@ -238,6 +250,14 @@ Using the multi-task toggle buttons on the Android side, you can seamlessly swit
 <p align="center">
   <img src="docs/images/MyBoard.jpg" width="60%" /><br/>
   <b>Custom FPV wireless video transmitter camera board based on the RV1106 chip</b>
+</p>
+
+---
+
+📐 System Architecture & Workflow
+<p align="center">
+<img src="docs/images/flowchart.png" width="85%" /><br/>
+<b>zs-ipc System Architecture & Data Flow Diagram</b>
 </p>
 
 ---
