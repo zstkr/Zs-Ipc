@@ -208,9 +208,9 @@ chmod +x /etc/init.d/S99zs_ipc
 
 ### 📄 开源协议
 
-本项目软件部分采用 **MIT** 开源协议，允许他人自由修改、分发及商用。
+1. 本项目中**由作者自主研发的软件代码部分**（包含 `app/` 与 `android_app/` 目录中的自研源码）采用 **MIT 开源协议**，允许他人自由修改、分发及商用。
+2. 本项目所依赖的第三方开源库（如 NCNN, OpenCV-Mobile, GStreamer 等）以及底层官方 SDK、Linux 内核、Buildroot 系统等，其版权与开源协议（如 GPLv2, Apache 2.0 等）均归其原作者和各开源组织所有，商用或二次开发时需自行遵守其对应底层的协议规范。
 
----
 ---
 
 ## 🇺🇸 English
@@ -407,4 +407,5 @@ chmod +x /etc/init.d/S99zs_ipc
 
 ### 📄 License
 
-The software part of this project is licensed under the **MIT License** - see the LICENSE file for details.
+1. The **self-developed software code** of this project (including the source code inside the `app/` and `android_app/` directories) is licensed under the **MIT License** - allowing free modification, distribution, and commercial use.
+2. Third-party open-source libraries (e.g., NCNN, OpenCV-Mobile, GStreamer), the underlying official SDK, Linux Kernel, and Buildroot system are owned by their respective authors and open-source organizations. Users must comply with their corresponding original licenses (such as GPLv2, Apache 2.0, etc.) for commercial use or secondary development.
